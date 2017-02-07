@@ -14,14 +14,17 @@ import PlaygroundSupport
 //: ![assistanteditor](timeline.png "Timeline")
 //: ## Your code starts here
 // Create a new canvas
-let canvas = Canvas(width: 300, height: 300)
+let canvas = Canvas(width: 300, height: 300);
 
-// Draw some lines
-canvas.defaultLineWidth = 1
-canvas.drawLine(fromX: 100, fromY: 0, toX: 100, toY: 50)
-canvas.drawLine(fromX: 150, fromY: 0, toX: 150, toY: 100)
-canvas.drawLine(fromX: 200, fromY: 0, toX: 200, toY: 50)
+// Draw the dots
+for x in stride(from: 0, through: 300, by: 25){
+    canvas.drawEllipse(centreX: x, centreY: 300, width: 2, height: 2);
+    }
 
-//: ## Template code
-//: The code below is necessary to see the result of your work in the Assistant Editor at right. Please do not remove.
+
+for x in stride(from: 0, through: 300, by: 25){
+    canvas.drawEllipse(centreX: x, centreY: 275, width: 2, height: 2);
+    }
+
+
 PlaygroundPage.current.liveView = canvas.imageView
