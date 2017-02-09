@@ -16,15 +16,35 @@ import PlaygroundSupport
 // Create a new canvas
 let canvas = Canvas(width: 300, height: 300);
 
-// Draw the dots
-for x in stride(from: 0, through: 300, by: 25){
-    canvas.drawEllipse(centreX: x, centreY: 300, width: 2, height: 2);
-    }
-
+// Dots in the program
+for y in stride(from: 300, through: 0, by: -25){
 
 for x in stride(from: 0, through: 300, by: 25){
-    canvas.drawEllipse(centreX: x, centreY: 275, width: 2, height: 2);
+    canvas.drawEllipse(centreX: x, centreY: y, width: 2, height: 2);
     }
+}
+
+//First Rectangle
+canvas.drawShapesWithBorders = false;
+canvas.fillColor = Color(hue: 0, saturation: 0, brightness: 70, alpha: 100);
+canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 300, height: 75);
+
+//First rectangles line
+
+for x in stride(from: 0, through: 25, by: 1){
+    canvas.defaultLineWidth
+    canvas.drawLine(fromX: 0, fromY: 75, toX: 1, toY: 150);
+}
+
+//Triangles for first rectangle
+canvas.drawShapesWithBorders = false;
+canvas.fillColor = Color(hue: 0, saturation: 0, brightness: 70, alpha: 100)
+canvas.drawLine(fromX: 42, fromY: 50, toX: 7, toY: 85, lineWidth: 50);
+
+canvas.drawLine(fromX: 100, fromY: 50, toX: 75, toY: 85, lineWidth: 50);
+
+
+//Second Rectangle
 
 
 PlaygroundPage.current.liveView = canvas.imageView
